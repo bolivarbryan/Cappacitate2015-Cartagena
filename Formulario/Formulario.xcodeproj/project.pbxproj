@@ -13,6 +13,7 @@
 		E8E1C7F81AFD24B7009D45A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E1C7F71AFD24B7009D45A5 /* Images.xcassets */; };
 		E8E1C7FB1AFD24B7009D45A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E1C7F91AFD24B7009D45A5 /* LaunchScreen.xib */; };
 		E8E1C8071AFD24B7009D45A5 /* FormularioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8061AFD24B7009D45A5 /* FormularioTests.m */; };
+		E8E1C8151AFD4997009D45A5 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8141AFD4997009D45A5 /* Usuario.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 		E8E1C8001AFD24B7009D45A5 /* FormularioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormularioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E1C8051AFD24B7009D45A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8E1C8061AFD24B7009D45A5 /* FormularioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormularioTests.m; sourceTree = "<group>"; };
+		E8E1C8131AFD4997009D45A5 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		E8E1C8141AFD4997009D45A5 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,9 @@
 		E8E1C7E91AFD24B7009D45A5 /* Formulario */ = {
 			isa = PBXGroup;
 			children = (
+				E8E1C8121AFD48FB009D45A5 /* Controller */,
+				E8E1C8111AFD48F3009D45A5 /* View */,
+				E8E1C8101AFD48D0009D45A5 /* Model */,
 				E8E1C7EE1AFD24B7009D45A5 /* AppDelegate.h */,
 				E8E1C7EF1AFD24B7009D45A5 /* AppDelegate.m */,
 				E8E1C7F41AFD24B7009D45A5 /* Main.storyboard */,
@@ -112,6 +118,29 @@
 				E8E1C8051AFD24B7009D45A5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8E1C8101AFD48D0009D45A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8E1C8131AFD4997009D45A5 /* Usuario.h */,
+				E8E1C8141AFD4997009D45A5 /* Usuario.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E8E1C8111AFD48F3009D45A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E8E1C8121AFD48FB009D45A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8E1C7F01AFD24B7009D45A5 /* AppDelegate.m in Sources */,
+				E8E1C8151AFD4997009D45A5 /* Usuario.m in Sources */,
 				E8E1C7ED1AFD24B7009D45A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
