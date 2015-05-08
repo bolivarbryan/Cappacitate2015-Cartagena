@@ -14,6 +14,7 @@
 		E8E1C7FB1AFD24B7009D45A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E1C7F91AFD24B7009D45A5 /* LaunchScreen.xib */; };
 		E8E1C8071AFD24B7009D45A5 /* FormularioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8061AFD24B7009D45A5 /* FormularioTests.m */; };
 		E8E1C8151AFD4997009D45A5 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8141AFD4997009D45A5 /* Usuario.m */; };
+		E8E1C81E1AFD4DD0009D45A5 /* CrearCuentaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C81D1AFD4DD0009D45A5 /* CrearCuentaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E8E1C8061AFD24B7009D45A5 /* FormularioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormularioTests.m; sourceTree = "<group>"; };
 		E8E1C8131AFD4997009D45A5 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
 		E8E1C8141AFD4997009D45A5 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
+		E8E1C81C1AFD4DD0009D45A5 /* CrearCuentaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrearCuentaViewController.h; sourceTree = "<group>"; };
+		E8E1C81D1AFD4DD0009D45A5 /* CrearCuentaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrearCuentaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 		E8E1C8121AFD48FB009D45A5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E8E1C81C1AFD4DD0009D45A5 /* CrearCuentaViewController.h */,
+				E8E1C81D1AFD4DD0009D45A5 /* CrearCuentaViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E1C81E1AFD4DD0009D45A5 /* CrearCuentaViewController.m in Sources */,
 				E8E1C7F01AFD24B7009D45A5 /* AppDelegate.m in Sources */,
 				E8E1C8151AFD4997009D45A5 /* Usuario.m in Sources */,
 				E8E1C7ED1AFD24B7009D45A5 /* main.m in Sources */,

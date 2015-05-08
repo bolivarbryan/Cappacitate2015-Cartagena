@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="1255.5" y="-380"/>
         </scene>
-        <!--View Controller-->
+        <!--Crear Cuenta View Controller-->
         <scene sceneID="vpw-fe-qpT">
             <objects>
-                <viewController id="5Vy-sZ-3Qg" sceneMemberID="viewController">
+                <viewController id="5Vy-sZ-3Qg" customClass="CrearCuentaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EBj-uF-oPl"/>
                         <viewControllerLayoutGuide type="bottom" id="61S-YP-iXw"/>
@@ -177,6 +177,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="crearCuenta:" destination="5Vy-sZ-3Qg" eventType="touchUpInside" id="WTG-VI-N70"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oM-YI-YDw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -319,6 +322,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="password" destination="GTI-td-CFf" id="xfY-b7-qJf"/>
+                        <outlet property="passwordConfirm" destination="yFr-V6-3Z9" id="G1X-IA-qmO"/>
+                        <outlet property="usuario" destination="ZEB-z5-5GX" id="h8D-qO-s1n"/>
                         <segue destination="uQu-2n-fBK" kind="show" id="bas-Ny-YQF"/>
                     </connections>
                 </viewController>
@@ -549,6 +555,6 @@
         <image name="Maldivian-Beach-Background-1080p" width="720" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GS6-UE-Sb2"/>
+        <segue reference="bas-Ny-YQF"/>
     </inferredMetricsTieBreakers>
 </document>

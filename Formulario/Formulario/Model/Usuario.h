@@ -11,4 +11,5 @@
 @interface Usuario : NSObject
  @property (nonatomic, assign) NSString * username;
  @property (nonatomic, assign) NSString * password;
+-(BOOL)validarDatosDeUsuario:(NSString *)usuario conPassword: (NSString *)password yPasswordDeConfirmacion:(NSString *)passwordConfirm;
 @end
