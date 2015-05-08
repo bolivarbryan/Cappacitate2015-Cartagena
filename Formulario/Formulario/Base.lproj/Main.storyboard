@@ -325,17 +325,17 @@
                         <outlet property="password" destination="GTI-td-CFf" id="xfY-b7-qJf"/>
                         <outlet property="passwordConfirm" destination="yFr-V6-3Z9" id="G1X-IA-qmO"/>
                         <outlet property="usuario" destination="ZEB-z5-5GX" id="h8D-qO-s1n"/>
-                        <segue destination="uQu-2n-fBK" kind="show" id="bas-Ny-YQF"/>
+                        <segue destination="uQu-2n-fBK" kind="show" identifier="irAHomeSegue" id="bas-Ny-YQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw0-JD-k4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2040" y="-652"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="aI6-cw-Rrq">
             <objects>
-                <viewController id="k97-D7-nmJ" sceneMemberID="viewController">
+                <viewController id="k97-D7-nmJ" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1hK-IK-2RQ"/>
                         <viewControllerLayoutGuide type="bottom" id="1zP-I8-1pY"/>
@@ -365,6 +365,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="crearCuenta:" destination="k97-D7-nmJ" eventType="touchUpInside" id="6tY-Jp-hDh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -426,17 +429,19 @@
                         </variation>
                     </view>
                     <connections>
-                        <segue destination="uQu-2n-fBK" kind="show" id="GS6-UE-Sb2"/>
+                        <outlet property="password" destination="a9u-5b-Qkb" id="rEC-1W-Ify"/>
+                        <outlet property="username" destination="App-hu-F1W" id="7j4-t2-6b8"/>
+                        <segue destination="uQu-2n-fBK" kind="show" identifier="irAHomeSegue" id="GS6-UE-Sb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UW-Jm-XsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2040" y="69"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="vrz-Ty-P51">
             <objects>
-                <viewController id="uQu-2n-fBK" sceneMemberID="viewController">
+                <viewController id="uQu-2n-fBK" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cmv-eT-z5j"/>
                         <viewControllerLayoutGuide type="bottom" id="rpv-Bw-Iyy"/>
@@ -446,11 +451,24 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCB-I4-LdN">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4l3-6t-Saz"/>
+                                    <constraint firstAttribute="width" constant="156" id="7tm-Xs-kA4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="122" y="98" width="156" height="25"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4l3-6t-Saz"/>
+                                        <exclude reference="7tm-Xs-kA4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4l3-6t-Saz"/>
+                                        <include reference="7tm-Xs-kA4"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBs-QY-cXO">
@@ -458,36 +476,49 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="53" y="147" width="294" height="65"/>
-                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzX-m5-QLs">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Saluda">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="120" y="225" width="160" height="30"/>
-                                </variation>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hCB-I4-LdN" firstAttribute="top" secondItem="cmv-eT-z5j" secondAttribute="bottom" constant="34" id="9b6-Tk-zrc"/>
+                            <constraint firstItem="hBs-QY-cXO" firstAttribute="centerX" secondItem="DrD-qM-RzM" secondAttribute="centerX" id="SfB-1t-WBl"/>
+                            <constraint firstItem="rpv-Bw-Iyy" firstAttribute="top" secondItem="hBs-QY-cXO" secondAttribute="bottom" constant="388" id="U2u-PZ-M6D"/>
+                            <constraint firstItem="hBs-QY-cXO" firstAttribute="centerX" secondItem="hCB-I4-LdN" secondAttribute="centerX" id="bCy-DN-dW9"/>
+                            <constraint firstItem="hBs-QY-cXO" firstAttribute="top" secondItem="hCB-I4-LdN" secondAttribute="bottom" constant="24" id="qaH-q7-bU2"/>
+                            <constraint firstItem="hBs-QY-cXO" firstAttribute="leading" secondItem="DrD-qM-RzM" secondAttribute="leadingMargin" constant="37" id="yWO-0P-zpg"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hCB-I4-LdN"/>
                                 <exclude reference="hBs-QY-cXO"/>
-                                <exclude reference="BzX-m5-QLs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="SfB-1t-WBl"/>
+                                <exclude reference="bCy-DN-dW9"/>
+                                <exclude reference="qaH-q7-bU2"/>
+                                <exclude reference="yWO-0P-zpg"/>
+                                <exclude reference="9b6-Tk-zrc"/>
+                                <exclude reference="U2u-PZ-M6D"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="hCB-I4-LdN"/>
                                 <include reference="hBs-QY-cXO"/>
-                                <include reference="BzX-m5-QLs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="SfB-1t-WBl"/>
+                                <include reference="bCy-DN-dW9"/>
+                                <include reference="qaH-q7-bU2"/>
+                                <include reference="yWO-0P-zpg"/>
+                                <include reference="9b6-Tk-zrc"/>
+                                <include reference="U2u-PZ-M6D"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="username" destination="hBs-QY-cXO" id="bDd-sm-4BX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXr-Fg-3wO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +586,6 @@
         <image name="Maldivian-Beach-Background-1080p" width="720" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bas-Ny-YQF"/>
+        <segue reference="GS6-UE-Sb2"/>
     </inferredMetricsTieBreakers>
 </document>

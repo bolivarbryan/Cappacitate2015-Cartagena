@@ -15,6 +15,8 @@
 		E8E1C8071AFD24B7009D45A5 /* FormularioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8061AFD24B7009D45A5 /* FormularioTests.m */; };
 		E8E1C8151AFD4997009D45A5 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8141AFD4997009D45A5 /* Usuario.m */; };
 		E8E1C81E1AFD4DD0009D45A5 /* CrearCuentaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C81D1AFD4DD0009D45A5 /* CrearCuentaViewController.m */; };
+		E8E1C8211AFD5D87009D45A5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8201AFD5D87009D45A5 /* HomeViewController.m */; };
+		E8E1C8241AFD62A9009D45A5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E1C8231AFD62A9009D45A5 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		E8E1C8141AFD4997009D45A5 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		E8E1C81C1AFD4DD0009D45A5 /* CrearCuentaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrearCuentaViewController.h; sourceTree = "<group>"; };
 		E8E1C81D1AFD4DD0009D45A5 /* CrearCuentaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrearCuentaViewController.m; sourceTree = "<group>"; };
+		E8E1C81F1AFD5D87009D45A5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E8E1C8201AFD5D87009D45A5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E8E1C8221AFD62A9009D45A5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E8E1C8231AFD62A9009D45A5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,10 @@
 			children = (
 				E8E1C81C1AFD4DD0009D45A5 /* CrearCuentaViewController.h */,
 				E8E1C81D1AFD4DD0009D45A5 /* CrearCuentaViewController.m */,
+				E8E1C81F1AFD5D87009D45A5 /* HomeViewController.h */,
+				E8E1C8201AFD5D87009D45A5 /* HomeViewController.m */,
+				E8E1C8221AFD62A9009D45A5 /* LoginViewController.h */,
+				E8E1C8231AFD62A9009D45A5 /* LoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,7 +260,9 @@
 			files = (
 				E8E1C81E1AFD4DD0009D45A5 /* CrearCuentaViewController.m in Sources */,
 				E8E1C7F01AFD24B7009D45A5 /* AppDelegate.m in Sources */,
+				E8E1C8241AFD62A9009D45A5 /* LoginViewController.m in Sources */,
 				E8E1C8151AFD4997009D45A5 /* Usuario.m in Sources */,
+				E8E1C8211AFD5D87009D45A5 /* HomeViewController.m in Sources */,
 				E8E1C7ED1AFD24B7009D45A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  CrearCuentaViewController.h
+//  LoginViewController.h
 //  Formulario
 //
 //  Created by Bryan A Bolivar M on 5/8/15.
@@ -8,14 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CrearCuentaViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet UITextField *usuario;
-
+@interface LoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet UITextField *passwordConfirm;
-
-
 - (IBAction)crearCuenta:(id)sender;
 
 @end

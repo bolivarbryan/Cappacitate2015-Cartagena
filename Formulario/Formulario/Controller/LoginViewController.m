@@ -1,32 +1,24 @@
 //
-//  CrearCuentaViewController.m
+//  LoginViewController.m
 //  Formulario
 //
 //  Created by Bryan A Bolivar M on 5/8/15.
 //  Copyright (c) 2015 Bolivar. All rights reserved.
 //
 
-#import "CrearCuentaViewController.h"
+#import "LoginViewController.h"
 #import "Usuario.h"
 #import "HomeViewController.h"
 
-@interface CrearCuentaViewController (){
-    Usuario *user;
-}
+@interface LoginViewController ()
 
 @end
 
-@implementation CrearCuentaViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Crear Cuenta";
-    
- 
-
-    
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,39 +33,23 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"irAHomeSegue"]) {
+        Usuario *user = [[Usuario alloc] init];
+        user.username = self.username.text;
+        user.password = self.password.text;
         [segue.destinationViewController setMiUsuario:user];
+    }else{
+        [self vibrarTextfield:self.password];
+        [self vibrarTextfield:self.username];
     }
     
 }
 
-
 - (IBAction)crearCuenta:(id)sender {
-    user = [[Usuario alloc] init];
-    if ([user validarDatosDeUsuario:self.usuario.text conPassword:self.password.text yPasswordDeConfirmacion:self.passwordConfirm.text]){
-        user.username = self.usuario.text;
-        user.password = self.password.text;
-        //ALERTAS
-        [[[UIAlertView alloc] initWithTitle:@"Formulario" message:@"Usuario creado, Bienvenido" delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles: nil] show];
-        
+    if ([self.username.text isEqualToString:@"usuariox"] && [self.password.text isEqualToString:@"123456"]) {
         [self performSegueWithIdentifier:@"irAHomeSegue" sender:self];
-        
-    }else{
-        if (self.usuario.text.length < 6) {
-            self.usuario.textColor = [UIColor redColor];
-            self.usuario.layer.borderColor=[[UIColor redColor]CGColor];
-            [self vibrarTextfield:self.usuario];
-        }
-        if ([self.password.text isEqualToString:@""] ) {
-                [self vibrarTextfield:self.password];
-        }else{
-            if (![self.password.text isEqualToString:self.passwordConfirm.text]) {
-                [self vibrarTextfield:self.password];
-                [self vibrarTextfield:self.passwordConfirm];
-            }
-        }
     }
-
 }
+
 -(void)vibrarTextfield: (UITextField *)textField{
     [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         [textField setFrame:CGRectMake(textField.frame.origin.x - 10, textField.frame.origin.y, textField.frame.size.width, textField.frame.size.height)];
@@ -88,5 +64,4 @@
         }];
     }];
 }
-
 @end
