@@ -13,6 +13,8 @@
 		E8D446B81AFE8BE700278B3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D446B71AFE8BE700278B3D /* Images.xcassets */; };
 		E8D446BB1AFE8BE700278B3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D446B91AFE8BE700278B3D /* LaunchScreen.xib */; };
 		E8D446C71AFE8BE700278B3D /* SwiftMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D446C61AFE8BE700278B3D /* SwiftMenuTests.swift */; };
+		E8D446D21AFE91F700278B3D /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D446D11AFE91F700278B3D /* CellTableViewCell.swift */; };
+		E8D4DA7A1AFEA41A006BCB63 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D4DA791AFEA41A006BCB63 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,10 @@
 		E8D446C01AFE8BE700278B3D /* SwiftMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D446C51AFE8BE700278B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8D446C61AFE8BE700278B3D /* SwiftMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMenuTests.swift; sourceTree = "<group>"; };
+		E8D446D11AFE91F700278B3D /* CellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellTableViewCell.swift; path = View/CellTableViewCell.swift; sourceTree = "<group>"; };
+		E8D4DA771AFEA419006BCB63 /* SwiftMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftMenu-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8D4DA781AFEA41A006BCB63 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Model/Post.h; sourceTree = "<group>"; };
+		E8D4DA791AFEA41A006BCB63 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Model/Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,15 @@
 		E8D446AD1AFE8BE700278B3D /* SwiftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				E8D4DA7B1AFEA430006BCB63 /* Model */,
+				E8D446D01AFE91E000278B3D /* View */,
 				E8D446B01AFE8BE700278B3D /* AppDelegate.swift */,
 				E8D446B21AFE8BE700278B3D /* ViewController.swift */,
 				E8D446B41AFE8BE700278B3D /* Main.storyboard */,
 				E8D446B71AFE8BE700278B3D /* Images.xcassets */,
 				E8D446B91AFE8BE700278B3D /* LaunchScreen.xib */,
 				E8D446AE1AFE8BE700278B3D /* Supporting Files */,
+				E8D4DA771AFEA419006BCB63 /* SwiftMenu-Bridging-Header.h */,
 			);
 			path = SwiftMenu;
 			sourceTree = "<group>";
@@ -110,6 +119,23 @@
 				E8D446C51AFE8BE700278B3D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8D446D01AFE91E000278B3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E8D446D11AFE91F700278B3D /* CellTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E8D4DA7B1AFEA430006BCB63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8D4DA781AFEA41A006BCB63 /* Post.h */,
+				E8D4DA791AFEA41A006BCB63 /* Post.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D446D21AFE91F700278B3D /* CellTableViewCell.swift in Sources */,
 				E8D446B31AFE8BE700278B3D /* ViewController.swift in Sources */,
 				E8D446B11AFE8BE700278B3D /* AppDelegate.swift in Sources */,
+				E8D4DA7A1AFEA41A006BCB63 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +368,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftMenu/SwiftMenu-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +381,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftMenu/SwiftMenu-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +442,7 @@
 				E8D446CC1AFE8BE700278B3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D446CD1AFE8BE700278B3D /* Build configuration list for PBXNativeTarget "SwiftMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +451,7 @@
 				E8D446CF1AFE8BE700278B3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
