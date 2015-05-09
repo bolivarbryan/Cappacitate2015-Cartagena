@@ -10,7 +10,7 @@
 #import "CeldaTableViewCell.h"
 #import "Jugador.h"
 #import "DetallesJugadorViewController.h"
-
+#import <Parse/Parse.h>
 @interface ListaTableViewController (){
     NSArray *listaDeJugadores;
     Jugador * jugadorSeleccionado;
@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*
     listaDeJugadores = @[@{
                            @"nombre":@"falcao",
                            @"posicion": @"delantero",
@@ -36,11 +37,29 @@
                              },
                          
                          ];
+    */
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor greenColor];
+    self.refreshControl.tintColor  = [UIColor brownColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(recargar)
+                  forControlEvents:UIControlEventValueChanged];
+    [self recargar];
+  
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+-(void)recargar{
+    PFQuery *consulta = [PFQuery queryWithClassName:@"Jugador"];
+    [consulta findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        listaDeJugadores = objects;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +86,7 @@
     
     Jugador * jugador = [self convertirDesdeDiccionario:[listaDeJugadores objectAtIndex:indexPath.row]];
     
-    NSLog(@"%@",jugador.nombre);
+    NSLog(@"%@",jugador.fotoUrl);
     
     cell.nombre.text = jugador.nombre;
     cell.posicion.text = jugador.posicion;
@@ -78,12 +97,12 @@
     return cell;
 }
 
--(Jugador *)convertirDesdeDiccionario:(NSDictionary *) dictionary{
+-(Jugador *)convertirDesdeDiccionario:(PFObject *) dictionary{
     Jugador * jugador = [[Jugador alloc] init];
     jugador.nombre = [dictionary objectForKey:@"nombre"];
     jugador.goles = [NSNumber numberWithInt:[[dictionary objectForKey:@"goles"] integerValue]];
     jugador.posicion = [dictionary objectForKey:@"posicion"];
-    jugador.fotoUrl = [NSURL URLWithString:[dictionary objectForKey:@"fotoUrl"]];
+    jugador.fotoUrl = [NSURL URLWithString:[dictionary objectForKey:@"foto"]];
     return jugador;
 }
 

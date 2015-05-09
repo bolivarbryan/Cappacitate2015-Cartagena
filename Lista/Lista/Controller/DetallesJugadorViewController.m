@@ -22,7 +22,6 @@
     self.goles.text = [NSString stringWithFormat:@"%@",self.player.goles];
     self.posicion.text = self.player.posicion;
     
-    
     dispatch_async(dispatch_get_global_queue(0,0), ^{
         NSData * data = [[NSData alloc] initWithContentsOfURL: self.player.fotoUrl];
         if ( data == nil )
