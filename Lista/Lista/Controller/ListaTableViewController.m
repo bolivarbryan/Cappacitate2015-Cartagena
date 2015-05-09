@@ -7,6 +7,7 @@
 //
 
 #import "ListaTableViewController.h"
+#import "CeldaTableViewCell.h"
 
 @interface ListaTableViewController ()
 
@@ -44,8 +45,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //configuracion de contenido en la celda
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celdaIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = @"PRUEBA";
+    CeldaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celdaIdentifier" forIndexPath:indexPath];
+    cell.nombre.text = @"falcao";
+    cell.posicion.text = @"Delantero";
+    cell.goles.text = @"1000";
+    
+    [cell cargarFotoDesdeURL:@"http://www.terra.com/addon/img/deportes/e5fb0a-teofilo-gutierrez-619p.jpg"];
+    
+    //cargar asincronamente una imagen
+    
+    
+    
     return cell;
 }
 

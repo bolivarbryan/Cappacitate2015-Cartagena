@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CeldaTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *nombre;
+@property (weak, nonatomic) IBOutlet UILabel *posicion;
+@property (weak, nonatomic) IBOutlet UILabel *goles;
+@property (weak, nonatomic) IBOutlet UIImageView *foto;
+-(void)cargarFotoDesdeURL:(NSString *)urlString;
 @end
