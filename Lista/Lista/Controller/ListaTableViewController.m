@@ -8,8 +8,13 @@
 
 #import "ListaTableViewController.h"
 #import "CeldaTableViewCell.h"
+#import "Jugador.h"
+#import "DetallesJugadorViewController.h"
 
-@interface ListaTableViewController ()
+@interface ListaTableViewController (){
+    NSArray *listaDeJugadores;
+    Jugador * jugadorSeleccionado;
+}
 
 @end
 
@@ -17,7 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    listaDeJugadores = @[@{
+                           @"nombre":@"falcao",
+                           @"posicion": @"delantero",
+                           @"goles": @"1000",
+                           @"fotoUrl": @"http://i.ytimg.com/vi/MDh_51yJY4g/maxresdefault.jpg"
+                           },
+                         @{
+                             @"nombre":@"Teo",
+                             @"posicion": @"delantero",
+                             @"goles": @"2000",
+                             @"fotoUrl": @"http://www.terra.com/addon/img/deportes/e5fb0a-teofilo-gutierrez-619p.jpg"
+                             },
+                         
+                         ];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -39,26 +57,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //numero de celdas por seccion
-    return 5;
+    return listaDeJugadores.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //configuracion de contenido en la celda
     CeldaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celdaIdentifier" forIndexPath:indexPath];
-    cell.nombre.text = @"falcao";
-    cell.posicion.text = @"Delantero";
-    cell.goles.text = @"1000";
     
-    [cell cargarFotoDesdeURL:@"http://www.terra.com/addon/img/deportes/e5fb0a-teofilo-gutierrez-619p.jpg"];
+    Jugador * jugador = [self convertirDesdeDiccionario:[listaDeJugadores objectAtIndex:indexPath.row]];
     
-    //cargar asincronamente una imagen
+    NSLog(@"%@",jugador.nombre);
     
-    
-    
+    cell.nombre.text = jugador.nombre;
+    cell.posicion.text = jugador.posicion;
+    cell.goles.text = [NSString stringWithFormat:@"%@", jugador.goles];
+    [cell cargarFotoDesdeURL:jugador.fotoUrl];
+    cell.foto.layer.cornerRadius = 44.0f;
+    cell.foto.clipsToBounds = true;
     return cell;
 }
 
+-(Jugador *)convertirDesdeDiccionario:(NSDictionary *) dictionary{
+    Jugador * jugador = [[Jugador alloc] init];
+    jugador.nombre = [dictionary objectForKey:@"nombre"];
+    jugador.goles = [NSNumber numberWithInt:[[dictionary objectForKey:@"goles"] integerValue]];
+    jugador.posicion = [dictionary objectForKey:@"posicion"];
+    jugador.fotoUrl = [NSURL URLWithString:[dictionary objectForKey:@"fotoUrl"]];
+    return jugador;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    jugadorSeleccionado = [[Jugador alloc] init];
+    jugadorSeleccionado = [self convertirDesdeDiccionario:[listaDeJugadores objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:@"detallesJugadorSegue" sender:self];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -94,14 +127,17 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString: @"detallesJugadorSegue"]){
+        [segue.destinationViewController setPlayer:jugadorSeleccionado];
+    }
 }
-*/
+
 
 @end

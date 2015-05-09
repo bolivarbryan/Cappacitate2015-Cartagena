@@ -1,5 +1,5 @@
 //
-//  CeldaTableViewCell.h
+//  DetallesJugadorViewController.h
 //  Lista
 //
 //  Created by Bryan A Bolivar M on 5/9/15.
@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CeldaTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *nombre;
+#import "Jugador.h"
+@interface DetallesJugadorViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *foto;
 @property (weak, nonatomic) IBOutlet UILabel *posicion;
 @property (weak, nonatomic) IBOutlet UILabel *goles;
-@property (weak, nonatomic) IBOutlet UIImageView *foto;
--(void)cargarFotoDesdeURL:(NSURL *)url;
+
+@property (weak, nonatomic)  Jugador *player;
+
 @end

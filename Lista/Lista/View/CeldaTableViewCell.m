@@ -20,9 +20,9 @@
     // Configure the view for the selected state
 }
 
--(void)cargarFotoDesdeURL:(NSString *)urlString{
+-(void)cargarFotoDesdeURL:(NSURL *)url{
     dispatch_async(dispatch_get_global_queue(0,0), ^{
-        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlString]];
+        NSData * data = [[NSData alloc] initWithContentsOfURL: url];
         if ( data == nil )
             return;
         dispatch_async(dispatch_get_main_queue(), ^{

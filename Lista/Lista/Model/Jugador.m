@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Bolivar. All rights reserved.
 //
 
-#import "Usuario.h"
+#import "Jugador.h"
 
-@implementation Usuario
+@implementation Jugador
 
 @end

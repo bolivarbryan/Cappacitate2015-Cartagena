@@ -14,8 +14,9 @@
 		E8D446291AFE4B5D00278B3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D446271AFE4B5D00278B3D /* LaunchScreen.xib */; };
 		E8D446351AFE4B5D00278B3D /* ListaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D446341AFE4B5D00278B3D /* ListaTests.m */; };
 		E8D446411AFE4C6C00278B3D /* ListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D446401AFE4C6C00278B3D /* ListaTableViewController.m */; };
-		E8D446451AFE4D0300278B3D /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D446441AFE4D0300278B3D /* Usuario.m */; };
+		E8D446451AFE4D0300278B3D /* Jugador.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D446441AFE4D0300278B3D /* Jugador.m */; };
 		E8D446491AFE554C00278B3D /* CeldaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D446481AFE554C00278B3D /* CeldaTableViewCell.m */; };
+		E8D4464C1AFE5D1000278B3D /* DetallesJugadorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D4464B1AFE5D1000278B3D /* DetallesJugadorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +43,12 @@
 		E8D446341AFE4B5D00278B3D /* ListaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListaTests.m; sourceTree = "<group>"; };
 		E8D4463F1AFE4C6C00278B3D /* ListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaTableViewController.h; path = Controller/ListaTableViewController.h; sourceTree = "<group>"; };
 		E8D446401AFE4C6C00278B3D /* ListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaTableViewController.m; path = Controller/ListaTableViewController.m; sourceTree = "<group>"; };
-		E8D446431AFE4D0300278B3D /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Usuario.h; path = Model/Usuario.h; sourceTree = "<group>"; };
-		E8D446441AFE4D0300278B3D /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Usuario.m; path = Model/Usuario.m; sourceTree = "<group>"; };
+		E8D446431AFE4D0300278B3D /* Jugador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jugador.h; path = Model/Jugador.h; sourceTree = "<group>"; };
+		E8D446441AFE4D0300278B3D /* Jugador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jugador.m; path = Model/Jugador.m; sourceTree = "<group>"; };
 		E8D446471AFE554C00278B3D /* CeldaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CeldaTableViewCell.h; path = View/CeldaTableViewCell.h; sourceTree = "<group>"; };
 		E8D446481AFE554C00278B3D /* CeldaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CeldaTableViewCell.m; path = View/CeldaTableViewCell.m; sourceTree = "<group>"; };
+		E8D4464A1AFE5D1000278B3D /* DetallesJugadorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetallesJugadorViewController.h; path = Controller/DetallesJugadorViewController.h; sourceTree = "<group>"; };
+		E8D4464B1AFE5D1000278B3D /* DetallesJugadorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetallesJugadorViewController.m; path = Controller/DetallesJugadorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 			children = (
 				E8D4463F1AFE4C6C00278B3D /* ListaTableViewController.h */,
 				E8D446401AFE4C6C00278B3D /* ListaTableViewController.m */,
+				E8D4464A1AFE5D1000278B3D /* DetallesJugadorViewController.h */,
+				E8D4464B1AFE5D1000278B3D /* DetallesJugadorViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -138,8 +143,8 @@
 		E8D446421AFE4CD600278B3D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E8D446431AFE4D0300278B3D /* Usuario.h */,
-				E8D446441AFE4D0300278B3D /* Usuario.m */,
+				E8D446431AFE4D0300278B3D /* Jugador.h */,
+				E8D446441AFE4D0300278B3D /* Jugador.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -254,8 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D446491AFE554C00278B3D /* CeldaTableViewCell.m in Sources */,
-				E8D446451AFE4D0300278B3D /* Usuario.m in Sources */,
+				E8D446451AFE4D0300278B3D /* Jugador.m in Sources */,
 				E8D4461E1AFE4B5D00278B3D /* AppDelegate.m in Sources */,
+				E8D4464C1AFE5D1000278B3D /* DetallesJugadorViewController.m in Sources */,
 				E8D4461B1AFE4B5D00278B3D /* main.m in Sources */,
 				E8D446411AFE4C6C00278B3D /* ListaTableViewController.m in Sources */,
 			);
